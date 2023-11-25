@@ -9,6 +9,6 @@ import Blog from './Components/blog'
 import Work from './Components/work'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='Container'> <Home /> <About /> <Skills /> <Cv /> <Blog /> <Work /> </div>
-  </React.StrictMode>,
+    <div className='Container'><Work /> <Blog /> <Cv /> <Skills /> <About /> <Home />   </div>
+  </React.StrictMode>
 )

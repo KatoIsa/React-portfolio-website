@@ -12,7 +12,7 @@
     position: absolute;
     background: var(--dark-black);
     border: 1px solid var(--dark-black-light);
-    height: 80vh;
+    height: 600px;
     width: 300px;
     border-radius: 20px;
 }
