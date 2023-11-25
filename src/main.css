@@ -1,0 +1,34 @@
+@import url("./Components/css/alpha.css");
+
+@font-face {
+    font-family: 'code-normal';
+    src:  url("./fonts/SourceCodePro-Regular.otf");
+}
+@font-face {
+    font-family: 'code-bold';
+    src:  url("./fonts/SourceCodePro-Bold.otf");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "code-normal";
+}
+
+body{
+    background: var(--dark-black);
+    color: var(--dark-black-lighter);
+    display: flex;
+    justify-content: center;
+}
+.Container{
+    position: relative;
+    background: #333;
+    height: 84vh;
+    margin-top: 50%;
+    transform: translateY(-12vh);
+}
+.Container .card:nth-child(1){
+    position: absolute;
+    margin-top: -200px;
+}

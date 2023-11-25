@@ -1,0 +1,16 @@
+:root{
+    --dark-black: #030307;
+    --dark-black-light: #6E6F88;
+    --dark-black-lighter: #90A9C7;
+    --dark-orange: #F68940;
+    --dark-orange-light: #9C572B;
+    --border-color: #6F6361;
+    
+    --light-white: #FFFFFF;
+    --light-white-dull: #F3F3FF;
+    --light-white-dark: #9D9D9F;
+    --light-white-darker: #9D9D9F;
+    --light-orange: #F68940;
+    --light-orange-dull: #FFB048;
+
+}
