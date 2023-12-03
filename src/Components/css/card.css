@@ -40,10 +40,10 @@
     opacity: 30%;
 }
 .card {
+    position: relative;
     display: flex;
     align-items: flex-end;
     margin-left: 20px;
-    position: relative;
     background: var(--dark-black);
     border: 1px solid var(--dark-black-light);
     height: 195px;
@@ -66,4 +66,37 @@
 .card p{
     width: 100px;
     font-size: 12px;
+}
+
+/* 
+    section for the navigation button ...
+*/
+.NavigationButtons{
+    width: 100px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.NavigationButtons button{
+    background: var(--dark-black);
+    border: 1px solid var(--dark-black-light);
+    border-radius: 7px;
+    padding: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.NavigationButtons button:hover{
+    cursor: pointer;
+}
+.NavigationButtons button img{
+    width: 12px;
+}
+.NavigationButtons .counter p{
+    width: fit-content;
+    font-size: 26px;
 }

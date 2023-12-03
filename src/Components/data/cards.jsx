@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react'
+import backButton from '../css/Back-Button.png'
+import frontButton from '../css/Next-Button.png'
 import About from '../about'
 import Blog from '../blog'
 import '../css/card.css'
@@ -10,7 +13,7 @@ import Skills from '../skills'
 import Work from '../work'
 
 export default function Cards() {
-
+    const [counter, setCounter] = useState(1);
     let carddata = [
         {
             cardname: 'HOME',
@@ -62,6 +65,17 @@ export default function Cards() {
         }
     ]
 
+    const moveToPrevCard = () => {
+        setCounter(counter - 1)
+        if (counter == 1) setCounter(1)
+    }
+
+    const moveToNextCard = () => {
+        setCounter(counter + 1)
+        if (counter == carddata.length) setCounter(carddata.length)
+    }
+    
+
     return <>
         {
             carddata.map(data =>
@@ -79,14 +93,23 @@ export default function Cards() {
                             </div>
 
                             {
-                                data.grow === true ? 
-                                <div className="expandButton">
-                                    <button><img src={downarrow} alt="arrow" /> </button>
-                                </div> : <></>
+                                data.grow === true ?
+                                    <div className="expandButton">
+                                        <button><img src={downarrow} alt="arrow" /> </button>
+                                    </div> : <></>
                             }
                         </div> : <>
-                        {data.Expanded()}
-                        </> 
+                            {data.Expanded()}
+                            <div className='NavigationButtons'>
+                                <button onClick={moveToPrevCard} className='backButton'>
+                                    <img src={backButton} alt="back" />
+                                </button>
+                                <div className='counter'><p>{counter}</p></div>
+                                <button onClick={moveToNextCard} className='nextButton'>
+                                    <img src={frontButton} alt="front" />
+                                </button>
+                            </div>
+                        </>
                     }
                 </div>)
         }

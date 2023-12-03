@@ -20,4 +20,8 @@ body{
     background: var(--dark-black);
     color: var(--dark-black-lighter);
 }
+button{
+    border: none;
+    outline: none;
+}
 
