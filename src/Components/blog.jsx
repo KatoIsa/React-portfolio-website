@@ -1,9 +1,4 @@
-import Card from "./data/cards";
 
 export default function Blog() {
-    return <Card cardname='BLOG'
-        center={
-            <h2>under development</h2>
-        }
-    />
+    return <h1>Blog -- under developmet </h1>
 }

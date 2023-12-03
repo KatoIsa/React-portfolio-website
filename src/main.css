@@ -16,51 +16,8 @@
 }
 
 body{
+    overflow-x: hidden;
     background: var(--dark-black);
     color: var(--dark-black-lighter);
 }
-.Container{
-    /* background: #333; */
-    height: fit-content;
-    width: 300px;
-    padding: 20px;
-    transform: translateY(8vh);
-    margin: auto;
-}
 
-/* 
- Main Card Styles animations and all ....
-*/
-.Container .card:nth-child(6){
-    margin-left: 30px;
-}
-
-.Container .card:nth-child(2){
-    height: 570px;
-    margin-left: -20px;
-    margin-top: 15px;
-}
-.Container .card:nth-child(3){
-    z-index: -1;
-    height: 535px;
-    margin-left: -60px;
-    margin-top: 30px;
-}
-.Container .card:nth-child(4){
-    z-index: -2;
-    height: 495px;
-    margin-left: -90px;
-    margin-top: 50px;
-}
-.Container .card:nth-child(5){
-    z-index: -3;
-    height: 465px;
-    margin-left: -120px;
-    margin-top: 65px;
-}
-.Container .card:nth-child(1){
-    z-index: -4;
-    height: 432px;
-    margin-left: -98px;
-    margin-top: 79px;
-}

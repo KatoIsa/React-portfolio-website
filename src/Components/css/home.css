@@ -1,0 +1,34 @@
+.ImageContainer {
+    margin-left: 30px;
+    margin-top: 100px;
+}
+.homeinfo{
+    position: relative;
+    background: #030307e3;
+    padding-top: 20px;
+    margin-top: -135px;
+}
+.ImageContainer p{
+    margin-left: 5px;
+    font-size: 27px;
+    width: 250px;
+}
+.ImageContainer span {
+    color: var(--dark-orange);
+    font-weight: bold;
+}
+.ImageContainer .rings{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.ImageContainer .rings .ring{
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--dark-orange-light);
+}
+.ImageContainer .rings .ring:nth-child(2),
+.ImageContainer .rings .ring:nth-child(3){
+    margin-left: 30px;
+}

@@ -7,90 +7,63 @@
     font-family: 'code-bold';
     src:  url("./fonts/SourceCodePro-Bold.otf");
 }
-
-.card {
-    position: absolute;
-    background: var(--dark-black);
-    border: 1px solid var(--dark-black-light);
-    height: 600px;
-    width: 300px;
-    border-radius: 20px;
+/* 
+  Main card styles: Layout ...
+*/
+.container{
+    margin: 0px auto;
+    width: 1390px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
+/* 
+ Individual card styles ....
+*/
+.container .card:nth-child(1){
+    width: 600px;
+    min-height: 600px;
+    align-items: center!important;
+}
+.container .card:nth-child(2){
+    margin-left: -60px!important;
+}
+.container .card:nth-child(3),
+.container .card:nth-child(4),
+.container .card:nth-child(5),
+.container .card:nth-child(6){
+    opacity: 30%;
+}
+.card {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
+    position: relative;
+    background: var(--dark-black);
+    border: 1px solid var(--dark-black-light);
+    height: 195px;
+    width: 120px;
+    border-radius: 20px;
+}
+.card .fill{
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
 .CardHeader {
     color: var(--dark-black-light);
     font-family: "code-bold";
-    font-size: 20px;
-    margin: 10px 10px;
-    display: flex;
-    justify-content: space-between;
+    font-size: 12px;
 }
 .CardHeader img{
-    width: 36px;
-    opacity: 50%;
+    width: 65px;
+    opacity: 40%;
 }
-
-.card .center{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.card .center .image{
-    margin-top: 5px;
-    display: flex;
-}
-.card .center .image .data .ring{
-    width: 37px;
-    height: 37px;
-    border: 4px solid var(--dark-orange-light);
-    border-radius: 100px;
-}
-.card .center .image .data .ring:nth-child(1){
-    margin-left: 10px;
-    margin-top: 140px;
-}
-.card .center .image .data .ring:nth-child(2){
-    margin-left: 10px;
-    margin-top: 15px;
-}
-.card .center .image .data .ring:nth-child(3){
-    margin-top: 7px;
-    margin-left: -16px;
-}
-.card .center p{
-    width: 230px;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 30px;
-}
-.card .center .highliter{
-    color: var(--dark-orange);
-    font-family:code-bold;
-}
-.expandButton{
-    position: absolute;
-    margin-top: 30px;
-    text-align: center;
-    bottom: 20px;
-    width: 100%;
-}
-.expandButton button{
-    font-weight: bolder;
-    margin: auto;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    padding: 4px 6px;
-    border-radius: 10px;
-    font-size: 14px;
-    border: none;
-    background: var(--dark-orange-light);
-    color: var(--dark-black);
-}
-.expandButton button img{
-    width: 14px;
-    margin-left: 5px;
-    margin-top: 3px;
+.card p{
+    width: 100px;
+    font-size: 12px;
 }

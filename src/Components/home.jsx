@@ -1,23 +1,18 @@
 import me from '../assets/me.png'
-import Card from './data/cards'
+import './css/home.css'
 
 export default function Home() {
-    return <Card cardname='HOME'
-        center={
-            <>
-                <div className='image'>
-                    <img width={140} height={290} src={me} alt="me" />
-                    <div className='data'>
-                        <div className='ring'></div>
-                        <div className='ring'></div>
-                        <div className='ring'></div>
-                    </div>
-                </div>
-                <div className='words'>
-                    <p>Am Kato Isa, a
-                        <span className='highliter'> full stack dev</span></p>
-                </div>
-            </>
-        }
-    />
+    return <>
+     <div className='ImageContainer'>
+        <img width={200} src={me} alt="my image" />
+        <div className='homeinfo'>
+         <div className='rings'>
+            <div className='ring'></div>
+            <div className='ring'></div>
+            <div className='ring'></div>
+         </div>
+         <p>Am Kato Isa <br/> a <span>full stack dev</span></p>
+        </div>
+     </div>
+    </>
 }
