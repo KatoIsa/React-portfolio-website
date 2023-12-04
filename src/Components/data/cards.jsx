@@ -5,7 +5,6 @@ import frontButton from '../css/Next-Button.png'
 import About from '../about'
 import Blog from '../blog'
 import '../css/card.css'
-import downarrow from '../css/downArrow.png'
 import logo from '../css/Icon-Small.png'
 import Cv from '../cv'
 import Home from '../Home'
@@ -13,99 +12,150 @@ import Skills from '../skills'
 import Work from '../work'
 
 export default function Cards() {
-    const [counter, setCounter] = useState(1);
-    let carddata = [
-        {
-            cardname: 'HOME',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: true,
-            Expanded: () => {
-                return <Home />
+    const [counter, setCounter] = useState(0);
+    const [carddata,] = useState(
+        [
+        
+            {
+                cardname: 'HOME',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <Home />
+                }
+            },
+            {
+                cardname: 'ABOUT',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <About />
+                }
+            },
+            {
+                cardname: 'BLOG',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <Blog />
+                }
+            },
+            {
+                cardname: 'CV',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <Cv />
+                }
+            },
+            {
+                cardname: 'SKILL',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <Skills />
+                }
+            },
+            {
+                cardname: 'WORK',
+                shrinkdata: 'this is info to fill in the missing',
+                grow: false,
+                Expanded: () => {
+                    return <Work />
+                }
             }
-        },
-        {
-            cardname: 'ABOUT',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: false,
-            Expanded: () => {
-                return <About />
-            }
-        },
-        {
-            cardname: 'BLOG',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: false,
-            Expanded: () => {
-                return <Blog />
-            }
-        },
-        {
-            cardname: 'CV',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: false,
-            Expanded: () => {
-                return <Cv />
-            }
-        },
-        {
-            cardname: 'SKILL',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: false,
-            Expanded: () => {
-                return <Skills />
-            }
-        },
-        {
-            cardname: 'WORK',
-            shrinkdata: 'this is info to fill in the missing',
-            grow: false,
-            Expanded: () => {
-                return <Work />
-            }
-        }
-    ]
+        ]
+    )
+    // let carddata = [
+        
+    //     {
+    //         cardname: 'HOME',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: true,
+    //         Expanded: () => {
+    //             return <Home />
+    //         }
+    //     },
+    //     {
+    //         cardname: 'ABOUT',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: false,
+    //         Expanded: () => {
+    //             return <About />
+    //         }
+    //     },
+    //     {
+    //         cardname: 'BLOG',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: false,
+    //         Expanded: () => {
+    //             return <Blog />
+    //         }
+    //     },
+    //     {
+    //         cardname: 'CV',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: false,
+    //         Expanded: () => {
+    //             return <Cv />
+    //         }
+    //     },
+    //     {
+    //         cardname: 'SKILL',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: false,
+    //         Expanded: () => {
+    //             return <Skills />
+    //         }
+    //     },
+    //     {
+    //         cardname: 'WORK',
+    //         shrinkdata: 'this is info to fill in the missing',
+    //         grow: false,
+    //         Expanded: () => {
+    //             return <Work />
+    //         }
+    //     }
+    // ]
 
-    const moveToPrevCard = () => {
-        setCounter(counter - 1)
-        if (counter == 1) setCounter(1)
-    }
-
-    const moveToNextCard = () => {
-        setCounter(counter + 1)
-        if (counter == carddata.length) setCounter(carddata.length)
-    }
+    const handleFrontButtonClick = () => {
+        setCounter((prevCounter) => (prevCounter + 1) % carddata.length); 
+    };
     
+    const hundleBackButtonClick = () => {
+        setCounter((prevCounter) => (prevCounter -1 + carddata.length) % carddata.length);
+    } 
+
+    const adjustedArray = [...carddata.slice(counter), ...carddata.slice(0, counter)];
+    adjustedArray.forEach(element => {
+        element.grow = false;
+    });
+    adjustedArray[0].grow = true;
 
     return <>
         {
-            carddata.map(data =>
-                <div key={data.cardname} className="card">
-                    {data.grow === false ?
+            adjustedArray.map((element, index) =>
+                <div key={index} className="card">
+                    {element.grow === false ?
                         <div className='fill'>
                             <div className="center">
                                 <div className="CardHeader">
                                     <div className="logo">
                                         <img src={logo} alt="logo" />
                                     </div>
-                                    <div className="tittle"> <h1>{data.cardname}</h1> </div>
+                                    <div className="tittle"> <h1>{element.cardname}</h1> </div>
                                 </div>
-                                <p>{data.shrinkdata}</p>
+                                <p>{element.shrinkdata}</p>
                             </div>
 
-                            {
-                                data.grow === true ?
-                                    <div className="expandButton">
-                                        <button><img src={downarrow} alt="arrow" /> </button>
-                                    </div> : <></>
-                            }
                         </div> : <>
-                            {data.Expanded()}
+                            {element.Expanded()}
                             <div className='NavigationButtons'>
-                                <button onClick={moveToPrevCard} className='backButton'>
+                                <button onClick={hundleBackButtonClick} className='backButton'>
                                     <img src={backButton} alt="back" />
                                 </button>
-                                <div className='counter'><p>{counter}</p></div>
-                                <button onClick={moveToNextCard} className='nextButton'>
+                                <div className='counter'><p>{counter + 1}</p></div>
+                                <button onClick={handleFrontButtonClick} className='nextButton'>
                                     <img src={frontButton} alt="front" />
                                 </button>
                             </div>
