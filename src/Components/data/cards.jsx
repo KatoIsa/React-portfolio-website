@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import backButton from '../css/Back-Button.png'
 import frontButton from '../css/Next-Button.png'
 import About from '../about'
@@ -15,7 +15,7 @@ export default function Cards() {
     const [counter, setCounter] = useState(0);
     const [carddata,] = useState(
         [
-        
+
             {
                 cardname: 'HOME',
                 shrinkdata: 'this is info to fill in the missing',
@@ -66,76 +66,44 @@ export default function Cards() {
             }
         ]
     )
-    // let carddata = [
-        
-    //     {
-    //         cardname: 'HOME',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: true,
-    //         Expanded: () => {
-    //             return <Home />
-    //         }
-    //     },
-    //     {
-    //         cardname: 'ABOUT',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: false,
-    //         Expanded: () => {
-    //             return <About />
-    //         }
-    //     },
-    //     {
-    //         cardname: 'BLOG',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: false,
-    //         Expanded: () => {
-    //             return <Blog />
-    //         }
-    //     },
-    //     {
-    //         cardname: 'CV',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: false,
-    //         Expanded: () => {
-    //             return <Cv />
-    //         }
-    //     },
-    //     {
-    //         cardname: 'SKILL',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: false,
-    //         Expanded: () => {
-    //             return <Skills />
-    //         }
-    //     },
-    //     {
-    //         cardname: 'WORK',
-    //         shrinkdata: 'this is info to fill in the missing',
-    //         grow: false,
-    //         Expanded: () => {
-    //             return <Work />
-    //         }
-    //     }
-    // ]
 
     const handleFrontButtonClick = () => {
-        setCounter((prevCounter) => (prevCounter + 1) % carddata.length); 
+        setCounter((prevCounter) => (prevCounter + 1) % carddata.length);
     };
-    
-    const hundleBackButtonClick = () => {
-        setCounter((prevCounter) => (prevCounter -1 + carddata.length) % carddata.length);
-    } 
 
+    const hundleBackButtonClick = () => {
+        setCounter((prevCounter) => (prevCounter - 1 + carddata.length) % carddata.length);
+    }
+
+
+    useEffect(() => {
+        // add a delay to allow the component to re-render before applying the active class ...
+        const timeoutId = setTimeout(() => {
+            // remove active, next, and prev class from all elements ...
+            document.querySelector('corousel-item').forEach((item) => {
+                item.classList.remove('active', 'next', 'prev');
+            });
+
+            // add the 'active' class to the current element ...
+            document.getElementsById(`corousel-item-${counter}`).classList.add('active');
+
+        }, 50); //delay 
+
+        return () => clearTimeout(timeoutId);
+    }, [counter, carddata]);
+
+    
     const adjustedArray = [...carddata.slice(counter), ...carddata.slice(0, counter)];
     adjustedArray.forEach(element => {
         element.grow = false;
     });
+
     adjustedArray[0].grow = true;
 
     return <>
         {
             adjustedArray.map((element, index) =>
-                <div key={index} className="card">
+                <div key={index} id={`corousel-item-${index}`} className={`card corousel-item ${index === counter ? 'active' : ''}`} >
                     {element.grow === false ?
                         <div className='fill'>
                             <div className="center">
