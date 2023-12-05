@@ -77,8 +77,8 @@
     position: absolute;
     background: var(--light-orange);
     bottom: 2px;
-    height: 2px;
-    width: 30%;
+    height: 6px;
+    width: 10%;
     border-radius: 20px;
     left: 50%;
     transform: translateX(-50%);
