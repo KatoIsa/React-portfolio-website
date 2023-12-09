@@ -7,7 +7,7 @@ import Blog from '../blog'
 import '../css/card.css'
 import logo from '../css/Icon-Small.png'
 import Cv from '../cv'
-import Home from '../Home'
+import Home from '../home'
 import Skills from '../skills'
 import Work from '../work'
 
