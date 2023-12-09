@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import backButton from '../css/Back-Button.png'
 import frontButton from '../css/Next-Button.png'
 import About from '../about'
@@ -13,6 +13,7 @@ import Work from '../work'
 
 export default function Cards() {
     const [counter, setCounter] = useState(0);
+    const [isanimate, setIsanimate] = useState(false);
     const [carddata,] = useState(
         [
 
@@ -69,30 +70,32 @@ export default function Cards() {
 
     const handleFrontButtonClick = () => {
         setCounter((prevCounter) => (prevCounter + 1) % carddata.length);
+        handleAnimation('.active', 'animate 0.5s');
+        handleAnimation('.slideleft', 'slide 0.5s');
     };
 
     const hundleBackButtonClick = () => {
         setCounter((prevCounter) => (prevCounter - 1 + carddata.length) % carddata.length);
+        handleAnimation('.active', 'animate 0.5s');
+        handleAnimation('.slideleft', 'slide 0.5s');
     }
 
+    const handleAnimation = (ele, animationname) =>{
+        const element = document.querySelector(ele);
 
-    useEffect(() => {
-        // add a delay to allow the component to re-render before applying the active class ...
-        const timeoutId = setTimeout(() => {
-            // remove active, next, and prev class from all elements ...
-            document.querySelector('corousel-item').forEach((item) => {
-                item.classList.remove('active', 'next', 'prev');
-            });
+        if(!isanimate) {
+            setIsanimate(true);
+            element.style.animation = animationname;
+        }
 
-            // add the 'active' class to the current element ...
-            document.getElementsById(`corousel-item-${counter}`).classList.add('active');
+        element.addEventListener('animationend', () => {
+            setIsanimate(false);
+            element.style.animation = '';
+        });
+    };
 
-        }, 50); //delay 
 
-        return () => clearTimeout(timeoutId);
-    }, [counter, carddata]);
 
-    
     const adjustedArray = [...carddata.slice(counter), ...carddata.slice(0, counter)];
     adjustedArray.forEach(element => {
         element.grow = false;
@@ -103,7 +106,11 @@ export default function Cards() {
     return <>
         {
             adjustedArray.map((element, index) =>
-                <div key={index} id={`corousel-item-${index}`} className={`card corousel-item ${index === counter ? 'active' : ''}`} >
+                <div
+                    key={index}
+                    id={`corousel-item-${index}`}
+                    className={`card 'corousel-item' ${index === 1 ? 'slideleft' : '' } ${index === 0 ? 'active' : ''} `}
+                >
                     {element.grow === false ?
                         <div className='fill'>
                             <div className="center">
@@ -122,7 +129,7 @@ export default function Cards() {
                                 <button onClick={hundleBackButtonClick} className='backButton'>
                                     <img src={backButton} alt="back" />
                                 </button>
-                                <div className='counter'><p>{counter + 1}</p></div>
+                                <div className='counter'><p>{counter + 1}<span className='slash'>/</span><span className='out'>6</span></p></div>
                                 <button onClick={handleFrontButtonClick} className='nextButton'>
                                     <img src={frontButton} alt="front" />
                                 </button>

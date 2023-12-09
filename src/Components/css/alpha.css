@@ -1,9 +1,10 @@
 :root{
     --dark-black: #030307;
     --dark-black-light: #6E6F88;
+    --dark-black-light-opacity: #6e6f8860;
     --dark-black-lighter: #90A9C7;
     --dark-orange: #F68940;
-    --dark-orange-light: #9C572B;
+    --dark-orange-light: #9c562bb2;
     --border-color: #6F6361;
     
     --light-white: #FFFFFF;

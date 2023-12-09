@@ -32,3 +32,22 @@
 .ImageContainer .rings .ring:nth-child(3){
     margin-left: 30px;
 }
+
+@media (max-width: 709px){
+    .ImageContainer {
+        margin-top: 120px!important;
+        margin: 0px auto;
+        text-align: center;
+    }
+    .ImageContainer img{
+        width: 150px!important;
+    }
+    .ImageContainer .rings {
+        align-items: center;
+        justify-content: center;
+    }
+    .ImageContainer .rings .ring {
+        width: 30px;
+        height: 30px;
+    }
+}
