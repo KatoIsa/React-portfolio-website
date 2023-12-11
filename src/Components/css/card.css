@@ -1,53 +1,86 @@
 @import url("./alpha.css");
 
 @font-face {
-    font-family: 'code-normal';
-    src: url("./fonts/SourceCodePro-Regular.otf");
+  font-family: "code-normal";
+  src: url("./fonts/SourceCodePro-Regular.otf");
 }
 
 @font-face {
-    font-family: 'code-bold';
-    src: url("./fonts/SourceCodePro-Bold.otf");
+  font-family: "code-bold";
+  src: url("./fonts/SourceCodePro-Bold.otf");
 }
 
 :root {
-    --animationSpeed: linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%)-out 0.1s;
+  --animationSpeed: linear(
+      0 0%,
+      0.22 2.1%,
+      0.86 6.5%,
+      1.11 8.6%,
+      1.3 10.7%,
+      1.35 11.8%,
+      1.37 12.9%,
+      1.37 13.7%,
+      1.36 14.5%,
+      1.32 16.2%,
+      1.03 21.8%,
+      0.94 24%,
+      0.89 25.9%,
+      0.88 26.85%,
+      0.87 27.8%,
+      0.87 29.25%,
+      0.88 30.7%,
+      0.91 32.4%,
+      0.98 36.4%,
+      1.01 38.3%,
+      1.04 40.5%,
+      1.05 42.7%,
+      1.05 44.1%,
+      1.04 45.7%,
+      1 53.3%,
+      0.99 55.4%,
+      0.98 57.5%,
+      0.99 60.7%,
+      1 68.1%,
+      1.01 72.2%,
+      1 86.7%,
+      1 100%
+    )-out 0.1s;
 }
 
 /* 
   Main card styles: Layout ...
 */
 .container {
-    position: relative;
-    margin: 0px auto;
-    width: 1390px;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    -ms-flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  margin: 0px auto;
+  width: 1390px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 
  Individual card styles ....
 */
 .container .card:nth-child(1) {
-    width: 600px;
-    min-height: 600px;
-    align-items: center !important;
+  width: 600px;
+  min-height: 600px;
+  align-items: center !important;
 }
 
 .container .card:nth-child(2) {
-    margin-left: -60px !important;
+  margin-left: -60px !important;
 }
 
 .container .card:nth-child(3),
 .container .card:nth-child(4),
 .container .card:nth-child(5),
 .container .card:nth-child(6) {
-    opacity: 30%;
+  opacity: 30%;
 }
 
 .container .card:nth-child(2):hover,
@@ -55,24 +88,24 @@
 .container .card:nth-child(4):hover,
 .container .card:nth-child(5):hover,
 .container .card:nth-child(6):hover {
-    cursor: pointer;
-    opacity: 50%;
-    padding: 10px 1px;
-    transition: var(--animationSpeed);
+  cursor: pointer;
+  opacity: 50%;
+  padding: 10px 1px;
+  transition: var(--animationSpeed);
 }
 
 .card {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 20px;
-    background: var(--dark-black);
-    border: 1px solid var(--dark-black-light);
-    height: 195px;
-    width: 120px;
-    border-radius: 20px;
-    transition: var(--animationSpeed);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 20px;
+  background: var(--dark-black);
+  border: 1px solid var(--dark-black-light);
+  height: 195px;
+  width: 120px;
+  border-radius: 20px;
+  transition: var(--animationSpeed);
 }
 
 /* 
@@ -80,244 +113,282 @@
 */
 
 .corousel-item {
-    border: 2px solid var(--dark-black-light);
-    transition: var(--animationSpeed);
+  border: 2px solid var(--dark-black-light);
+  transition: var(--animationSpeed);
 }
 
-
 .corousel-item.active {
-    position: relative;
-    animation: animate;
-    overflow: hidden;
-    transition: var(--animationSpeed);
-
+  position: relative;
+  animation: animate;
+  overflow: hidden;
+  transition: var(--animationSpeed);
 }
 
 /* .slide{
     animation: 0.3s;
 } */
 @media (min-width: 745px) {
-    @keyframes animate {
-        0% {
-            margin-left: -100px;
-        }
-
-        50% {
-            margin-left: -100px;
-        }
-
-        100% {
-            /* margin-left: -60px; */
-        }
+  @keyframes animate {
+    0% {
+      margin-left: -100px;
     }
 
-    @keyframes slide {
-        0% {
-            /* position: absolute; */
-            /* height: 50px; */
-            width: 0px;
-            padding: 0px;
-            border: none;
-        }
-
-        50% {
-            width: 0px;
-            padding: 0px;
-            border: none;
-        }
-
-        100% {
-            opacity: 0;
-            padding: 10px 1px;
-        }
+    50% {
+      margin-left: -100px;
     }
+
+    100% {
+      /* margin-left: -60px; */
+    }
+  }
+
+  @keyframes slide {
+    0% {
+      /* position: absolute; */
+      /* height: 50px; */
+      width: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    50% {
+      width: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    100% {
+      opacity: 0;
+      padding: 10px 1px;
+    }
+  }
 }
-
 
 /* 
    .... END Animating all cards
 */
 .card .fill {
-    margin-left: 10px;
-    margin-bottom: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
 }
 
 .CardHeader {
-    color: var(--dark-black-light);
-    font-family: "code-bold";
-    font-size: 12px;
+  color: var(--dark-black-light);
+  font-family: "code-bold";
+  font-size: 12px;
 }
 
 .CardHeader img {
-    width: 65px;
-    opacity: 40%;
+  width: 65px;
+  opacity: 40%;
 }
 
 .card p {
-    width: 100px;
-    font-size: 12px;
+  width: 100px;
+  font-size: 12px;
 }
 
 /* 
     section for the navigation button ...
 */
 .NavigationButtons {
-    width: 100px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .NavigationButtons button {
-    background: var(--dark-black);
-    border: 1px solid var(--dark-black-light);
-    border-radius: 7px;
-    padding: 5px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) 0.8s;
+  background: var(--dark-black);
+  border: 1px solid var(--dark-black-light);
+  border-radius: 7px;
+  padding: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all
+    linear(
+      0 0%,
+      0.22 2.1%,
+      0.86 6.5%,
+      1.11 8.6%,
+      1.3 10.7%,
+      1.35 11.8%,
+      1.37 12.9%,
+      1.37 13.7%,
+      1.36 14.5%,
+      1.32 16.2%,
+      1.03 21.8%,
+      0.94 24%,
+      0.89 25.9%,
+      0.88 26.85%,
+      0.87 27.8%,
+      0.87 29.25%,
+      0.88 30.7%,
+      0.91 32.4%,
+      0.98 36.4%,
+      1.01 38.3%,
+      1.04 40.5%,
+      1.05 42.7%,
+      1.05 44.1%,
+      1.04 45.7%,
+      1 53.3%,
+      0.99 55.4%,
+      0.98 57.5%,
+      0.99 60.7%,
+      1 68.1%,
+      1.01 72.2%,
+      1 86.7%,
+      1 100%
+    )
+    0.8s;
 }
 
 .NavigationButtons button:hover {
-    cursor: pointer;
-    padding: 0 10px;
+  cursor: pointer;
+  padding: 0 10px;
 }
 
 .NavigationButtons button img {
-    width: 12px;
+  width: 12px;
 }
 
 .NavigationButtons .counter p {
-    width: fit-content;
-    font-size: 26px;
+  width: fit-content;
+  font-size: 26px;
 }
 
 /* 
     Adding mobile responsive design and layout ....
 */
 @media (max-width: 709px) {
-    .container {
-        justify-content: flex-start;
-        align-items: normal;
-        margin-left: -5px;
-    }
-    
-    .container .card:nth-child(1) {
-        position: absolute;
-        left: 0px;
-        top: 20px;
-        width: 90vw;
-        min-height: 95vh;
-        padding: 0;
-    }
+  .container {
+    justify-content: flex-start;
+    align-items: normal;
+    margin-left: -5px;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
 
-    .NavigationButtons {
-        top: 20px;
-        left: 20px;
-        align-items: flex-start;
-        display: flex;
-        align-items: center;
-        height: fit-content;
-        z-index: 2000;
-    }
+  .card {
+    flex: 0 0 auto;
+  }
 
-    .counter{
-        padding: 5px;
-        border-radius: 3px;
-    }
-    .counter p {
-        font-size: 17px!important;
-    }
-    .counter .slash{
-        color: var(--dark-orange-light);
-        font-size: 20px;
-    }
-    .counter .out {
-        color: var(--dark-black-light-opacity);
-    }
+  .container .card:nth-child(1) {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    width: 90vw;
+    min-height: 95vh;
+    padding: 0;
+  }
 
-    .container .card:nth-child(2),
-    .container .card:nth-child(3),
-    .container .card:nth-child(4),
-    .container .card:nth-child(5),
-    .container .card:nth-child(6) {
-        margin-top: 95px;
-        width: 100px;
-        height: 130px;
-        border-radius: 14px;
-    }
-    .container .card:nth-child(3) img,
-    .container .card:nth-child(4) img,
-    .container .card:nth-child(5) img,
-    .container .card:nth-child(6) img{
-        opacity: 10%;
-    }
-    .container .card:nth-child(3),
-    .container .card:nth-child(4),
-    .container .card:nth-child(5),
-    .container .card:nth-child(6){
-        color: var(--dark-black-light-opacity);
-        margin-top: 40px!important;
-        opacity: 100;
-        border: 1px solid var(--dark-black-light-opacity);
-    }
-    .container .card:nth-child(2) {
-        margin-left: 40px !important;
-    }
-    .CardHeader img{
-        width: 40px;
-    }
-    .container .card:nth-child(2) p,
-    .container .card:nth-child(3) p,
-    .container .card:nth-child(4) p,
-    .container .card:nth-child(5) p,
-    .container .card:nth-child(6) p{
-        font-size: 10px;
-        width: 90%;
-        margin-top: 3px;
-    }
-    .container .card:nth-child(3) h1,
-    .container .card:nth-child(4) h1,
-    .container .card:nth-child(5) h1,
-    .container .card:nth-child(6) h1{
-        opacity: 30%;
-    }
-    .container .card:nth-child(2) h1,
-    .container .card:nth-child(3) h1,
-    .container .card:nth-child(4) h1,
-    .container .card:nth-child(5) h1,
-    .container .card:nth-child(6) h1{
-        font-size: 15px;
-        margin-top: 3px;
-    }
+  .NavigationButtons {
+    top: 20px;
+    left: 20px;
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    z-index: 2000;
+  }
 
-    /* 
+  .counter {
+    padding: 5px;
+    border-radius: 3px;
+  }
+  .counter p {
+    font-size: 17px !important;
+  }
+  .counter .slash {
+    color: var(--dark-orange-light);
+    font-size: 20px;
+  }
+  .counter .out {
+    color: var(--dark-black-light-opacity);
+  }
+
+  .container .card:nth-child(2),
+  .container .card:nth-child(3),
+  .container .card:nth-child(4),
+  .container .card:nth-child(5),
+  .container .card:nth-child(6) {
+    margin-top: 95px;
+    width: 100px;
+    height: 130px;
+    border-radius: 14px;
+  }
+  .container .card:nth-child(3) img,
+  .container .card:nth-child(4) img,
+  .container .card:nth-child(5) img,
+  .container .card:nth-child(6) img {
+    opacity: 10%;
+  }
+  .container .card:nth-child(3),
+  .container .card:nth-child(4),
+  .container .card:nth-child(5),
+  .container .card:nth-child(6) {
+    color: var(--dark-black-light-opacity);
+    margin-top: 40px !important;
+    opacity: 100;
+    border: 1px solid var(--dark-black-light-opacity);
+  }
+  .container .card:nth-child(2) {
+    margin-left: 40px !important;
+  }
+  .CardHeader img {
+    width: 40px;
+  }
+  .container .card:nth-child(2) p,
+  .container .card:nth-child(3) p,
+  .container .card:nth-child(4) p,
+  .container .card:nth-child(5) p,
+  .container .card:nth-child(6) p {
+    font-size: 10px;
+    width: 90%;
+    margin-top: 3px;
+  }
+  .container .card:nth-child(3) h1,
+  .container .card:nth-child(4) h1,
+  .container .card:nth-child(5) h1,
+  .container .card:nth-child(6) h1 {
+    opacity: 30%;
+  }
+  .container .card:nth-child(2) h1,
+  .container .card:nth-child(3) h1,
+  .container .card:nth-child(4) h1,
+  .container .card:nth-child(5) h1,
+  .container .card:nth-child(6) h1 {
+    font-size: 15px;
+    margin-top: 3px;
+  }
+
+  /* 
         card mobile animation ...
     */
-    @keyframes slide {
-        0% {
-            /* position: absolute; */
-            /* height: 50px; */
-            width: 0px;
-            padding: 0px;
-            border: none;
-        }
-
-        50% {
-            width: 0px;
-            padding: 0px;
-            border: none;
-        }
-
-        100% {
-            opacity: 0;
-            padding: 10px 1px;
-        }
+  @keyframes slide {
+    0% {
+      /* position: absolute; */
+      /* height: 50px; */
+      width: 0px;
+      padding: 0px;
+      border: none;
     }
-    
+
+    50% {
+      width: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    100% {
+      opacity: 0;
+      padding: 10px 1px;
+    }
+  }
 }
