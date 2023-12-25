@@ -210,6 +210,18 @@
     width: fit-content;
     font-size: 26px;
 }
+.counter p {
+    font-size: 17px !important;
+}
+
+.counter .slash {
+    color: var(--dark-orange-light);
+    font-size: 20px;
+}
+
+.counter .out {
+    color: var(--dark-black-light-opacity);
+}
 
 /* 
     Adding mobile responsive design and layout ....
@@ -248,18 +260,7 @@
         border-radius: 3px;
     }
 
-    .counter p {
-        font-size: 17px !important;
-    }
-
-    .counter .slash {
-        color: var(--dark-orange-light);
-        font-size: 20px;
-    }
-
-    .counter .out {
-        color: var(--dark-black-light-opacity);
-    }
+    
 
     .container .card:nth-child(2),
     .container .card:nth-child(3),
