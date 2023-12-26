@@ -1,0 +1,29 @@
+.AboutContainer {
+    margin-left: 30px;
+}
+
+@media (max-width:709px) {
+    .AboutContainer {
+        margin-top: 200px;
+    }
+    .AboutContainer p:nth-child(2) {
+        width: 90%;
+    }
+}
+
+.AboutContainer .buttonWrapper {
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.AboutContainer .Button {
+    /* padding: 10px 10px; */
+    border-radius: 15px !important;
+}
+
+.AboutContainer p:nth-child(2) {
+    margin-top: 30px;
+    width: 80%;
+}

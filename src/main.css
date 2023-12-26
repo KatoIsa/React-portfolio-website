@@ -8,6 +8,9 @@
     font-family: 'code-bold';
     src:  url("./fonts/SourceCodePro-Bold.otf");
 }
+:root {
+    --animationSpeed: all linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) 0.8s;
+}
 
 *{
     padding: 0;
@@ -25,3 +28,25 @@ button{
     outline: none;
 }
 
+.Button{
+    background: var(--darker-orange);
+    text-align: center;
+    color: var(--dark-orange);
+    padding: 10px 0px;
+    margin: 5px;
+    box-shadow: 0px 0px 8px 0px #27150f;
+    transition: var(--animationSpeed);
+}
+.Button:hover{
+    cursor: pointer;
+    box-shadow: inset 0px 0px 12px 4px #3d1b10;
+    padding: 15px 5px!important;
+}
+.Button:nth-child(1){
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.Button:nth-child(2){
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

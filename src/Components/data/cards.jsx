@@ -42,7 +42,7 @@ export default function Cards() {
                 }
             },
             {
-                cardname: 'CV',
+                cardname: 'CONTACT',
                 shrinkdata: 'this is info to fill in the missing',
                 grow: false,
                 Expanded: () => {

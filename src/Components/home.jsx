@@ -15,6 +15,15 @@ export default function Home() {
                <p>Am Kato Isa <br /> <span>full stack dev</span></p>
             </div>
          </div>
+
+         <div className='CallToAction'>
+            <div className='projects Button'>
+               <p>Projects</p>
+            </div>
+            <div className='Contact Button'>
+             <p>Contact me</p>
+            </div>
+         </div>
       </div>
    </>
 }
