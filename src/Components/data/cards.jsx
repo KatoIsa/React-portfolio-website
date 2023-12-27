@@ -6,7 +6,7 @@ import About from '../about'
 import Blog from '../blog'
 import '../css/card.css'
 import logo from '../css/Icon-Small.png'
-import Cv from '../cv'
+import Contact from '../contact'
 import Home from '../home'
 import Skills from '../skills'
 import Work from '../work'
@@ -19,7 +19,7 @@ export default function Cards() {
 
             {
                 cardname: 'HOME',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'I am Kato Isa a full stack dev',
                 grow: false,
                 Expanded: () => {
                     return <Home />
@@ -27,7 +27,7 @@ export default function Cards() {
             },
             {
                 cardname: 'ABOUT',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: "Hello World! I'm Kato Isa a ...",
                 grow: false,
                 Expanded: () => {
                     return <About />
@@ -35,7 +35,7 @@ export default function Cards() {
             },
             {
                 cardname: 'BLOG',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'Dive into a tech haven where ...',
                 grow: false,
                 Expanded: () => {
                     return <Blog />
@@ -43,15 +43,15 @@ export default function Cards() {
             },
             {
                 cardname: 'CONTACT',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'Drop me a massage if your ...',
                 grow: false,
                 Expanded: () => {
-                    return <Cv />
+                    return <Contact />
                 }
             },
             {
                 cardname: 'SKILL',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: "I've worked on a wide range of ... ",
                 grow: false,
                 Expanded: () => {
                     return <Skills />
@@ -59,7 +59,7 @@ export default function Cards() {
             },
             {
                 cardname: 'WORK',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'The projects I have been working ...',
                 grow: false,
                 Expanded: () => {
                     return <Work />

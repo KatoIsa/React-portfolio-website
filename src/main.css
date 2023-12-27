@@ -31,7 +31,9 @@ button{
 .Button{
     background: var(--darker-orange);
     text-align: center;
+    font-size: 12px;
     color: var(--dark-orange);
+    width: 100px;
     padding: 10px 0px;
     margin: 5px;
     box-shadow: 0px 0px 8px 0px #27150f;

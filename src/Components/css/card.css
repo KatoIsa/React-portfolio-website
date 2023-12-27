@@ -61,6 +61,7 @@
     width: 600px;
     min-height: 600px;
     align-items: center !important;
+    overflow-y: auto;
 }
 
 .container .card:nth-child(2) {
@@ -81,7 +82,7 @@
 .container .card:nth-child(6):hover {
     cursor: pointer;
     opacity: 50%;
-    padding: 10px 1px;
+    padding: 10px 0px;
     transition: var(--animationSpeed);
 }
 
@@ -167,7 +168,11 @@
     opacity: 40%;
 }
 
-.card p {
+.container .card:nth-child(2) p,
+.container .card:nth-child(3) p,
+.container .card:nth-child(4) p,
+.container .card:nth-child(5) p,
+.container .card:nth-child(6) p {
     width: 100px;
     font-size: 12px;
 }
