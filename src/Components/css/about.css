@@ -3,9 +3,6 @@
 }
 
 @media (max-width:709px) {
-    .AboutContainer {
-        margin-top: 200px;
-    }
     .AboutContainer p:nth-child(2) {
         width: 90%;
     }

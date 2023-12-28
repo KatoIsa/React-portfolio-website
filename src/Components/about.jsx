@@ -1,7 +1,7 @@
 import './css/about.css'
 export default function About() {
     const slash = "'"
-    return <div className="AboutContainer">
+    return <div className="AboutContainer space">
         <h1>ABOUT ME</h1>
         
         <p>

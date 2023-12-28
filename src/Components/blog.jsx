@@ -3,7 +3,7 @@ import './css/blog.css'
 import blogImage from '../assets/blog.png'
 
 export default function Blog() {
-    return <div className='AboutContainer blog'>
+    return <div className='AboutContainer blog space'>
         <h1>BLOG</h1>
         <img src={blogImage} alt="blogImage" className='blogimage' />
 

@@ -60,8 +60,37 @@
 .container .card:nth-child(1) {
     width: 600px;
     min-height: 600px;
-    align-items: center !important;
+    align-items: center;
     overflow-y: auto;
+}
+
+/* 589 */
+@media (max-height: 589px) {
+    .container .card:nth-child(1) .space{
+        margin-top: 300px!important;
+    }
+}
+/* 480 */
+@media (max-height: 480px) {
+    .container .card:nth-child(1) .space{
+        margin-top: 400px!important;
+    }
+}
+@media (max-width: 709px) {
+    .container .card:nth-child(1) .space{
+        margin-top: 200px;
+    }
+}
+@media (max-width: 409px){
+    .container .card:nth-child(1) .space{
+        margin-top: 300px;
+    }
+}
+
+@media (max-width: 321px){
+    .container .card:nth-child(1) .space{
+        margin-top: 400px;
+    }
 }
 
 .container .card:nth-child(2) {
@@ -251,8 +280,9 @@
     }
 
     .NavigationButtons {
-        top: 20px;
-        left: 20px;
+        position: fixed;
+        top: 40px;
+        left: 36px;
         align-items: flex-start;
         display: flex;
         align-items: center;

@@ -75,6 +75,9 @@
         margin: 0px auto;
         text-align: center;
     }
+    .homeinfo{
+        margin-top: -44px;
+    }
     .ImageContainer img{
         width: 150px!important;
     }

@@ -23,6 +23,9 @@ body{
     background: var(--dark-black);
     color: var(--dark-black-lighter);
 }
+.card .container {
+    background: #19f;
+}
 button{
     border: none;
     outline: none;
