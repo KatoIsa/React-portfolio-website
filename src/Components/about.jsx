@@ -13,5 +13,7 @@ export default function About() {
         <div className='buttonWrapper'>
         <button className="Button" ><p>DOWNLOAD CV</p></button>
         </div>
+
+        
     </div>
 }

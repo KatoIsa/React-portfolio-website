@@ -68,6 +68,7 @@ export default function Cards() {
         ]
     )
 
+   
     const handleFrontButtonClick = () => {
         setCounter((prevCounter) => (prevCounter + 1) % carddata.length);
         handleAnimation('.active', 'animate 0.5s');
@@ -76,14 +77,14 @@ export default function Cards() {
 
     const hundleBackButtonClick = () => {
         setCounter((prevCounter) => (prevCounter - 1 + carddata.length) % carddata.length);
-        handleAnimation('.active', 'animate 0.5s');
+        handleAnimation('.active', 'animate  0.5s');
         handleAnimation('.slideleft', 'slide 0.5s');
     }
 
-    const handleAnimation = (ele, animationname) =>{
+    const handleAnimation = (ele, animationname) => {
         const element = document.querySelector(ele);
 
-        if(!isanimate) {
+        if (!isanimate) {
             setIsanimate(true);
             element.style.animation = animationname;
         }
@@ -91,6 +92,7 @@ export default function Cards() {
         element.addEventListener('animationend', () => {
             setIsanimate(false);
             element.style.animation = '';
+
         });
     };
 
@@ -109,7 +111,7 @@ export default function Cards() {
                 <div
                     key={index}
                     id={`corousel-item-${index}`}
-                    className={`card 'corousel-item' ${index === 1 ? 'slideleft' : '' } ${index === 0 ? 'active' : ''} `}
+                    className={`card 'corousel-item' ${index === 1 ? 'slideleft' : ''} ${index === 0 ? 'active' : ''} `}
                 >
                     {element.grow === false ?
                         <div className='fill'>
@@ -124,6 +126,7 @@ export default function Cards() {
                             </div>
 
                         </div> : <>
+                            <div className='alignmentHelper'></div>
                             {element.Expanded()}
                             <div className='NavigationButtons'>
                                 <button onClick={hundleBackButtonClick} className='backButton'>
