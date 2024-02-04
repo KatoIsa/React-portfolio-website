@@ -1,7 +1,8 @@
 import profilePic from '../assets/PortfolioProfilePic.png'
 import './css/home.css'
 
-export default function Home() {
+export default function Home(props) {
+   
    return <>
       <div className='homeContainer'>
          <div className='ImageContainer'>
@@ -17,10 +18,10 @@ export default function Home() {
          </div>
 
          <div className='CallToAction'>
-            <div className='projects Button'>
+            <div onClick={props.handleProjectsButton} className='projects Button'>
                <p>Projects</p>
             </div>
-            <div className='Contact Button'>
+            <div onClick={props.handleContactMeButton} className='Contact Button'>
              <p>Contact me</p>
             </div>
          </div>

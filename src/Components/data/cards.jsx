@@ -22,7 +22,7 @@ export default function Cards() {
                 shrinkdata: 'I am Kato Isa a full stack dev',
                 grow: false,
                 Expanded: () => {
-                    return <Home />
+                    return <Home handleProjectsButton={projectsButton} handleContactMeButton={contactMeButton}/>
                 }
             },
             {
@@ -68,17 +68,23 @@ export default function Cards() {
         ]
     )
 
+    const projectsButton = () => {setCounter(5);}
+    const contactMeButton = () => {setCounter(3);}
    
     const handleFrontButtonClick = () => {
         setCounter((prevCounter) => (prevCounter + 1) % carddata.length);
         handleAnimation('.active', 'animate 0.5s');
         handleAnimation('.slideleft', 'slide 0.5s');
+
+        console.log(counter);
     };
 
     const hundleBackButtonClick = () => {
         setCounter((prevCounter) => (prevCounter - 1 + carddata.length) % carddata.length);
         handleAnimation('.active', 'animate  0.5s');
         handleAnimation('.slideleft', 'slide 0.5s');
+
+        console.log(counter);
     }
 
     const handleAnimation = (ele, animationname) => {

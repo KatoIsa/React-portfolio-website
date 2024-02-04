@@ -39,7 +39,7 @@ button{
     width: 100px;
     padding: 10px 0px;
     margin: 5px;
-    box-shadow: 0px 0px 8px 0px #27150f;
+    box-shadow: 0px 0px 5px 0px #723d2c;
     transition: var(--animationSpeed);
 }
 .Button:hover{
