@@ -18,9 +18,11 @@ export default function Home(props) {
          </div>
 
          <div className='CallToAction'>
+            {/* eslint-disable-next-line react/prop-types*/ }
             <div onClick={props.handleProjectsButton} className='projects Button'>
                <p>Projects</p>
             </div>
+            {/* eslint-disable-next-line react/prop-types*/ }
             <div onClick={props.handleContactMeButton} className='Contact Button'>
              <p>Contact me</p>
             </div>
