@@ -47,7 +47,17 @@
     width: 40px;
     height: 40px;
     border: 3px solid var(--dark-orange-light);
+    animation: pulse-animation 2s infinite;
 }
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px #fd9753;
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+  }
+
 .ImageContainer .rings .ring:nth-child(2),
 .ImageContainer .rings .ring:nth-child(3){
     margin-left: 30px;
