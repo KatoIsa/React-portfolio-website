@@ -9,9 +9,12 @@ export default function Home(props) {
             <img width={200} className="profilePic" src={profilePic} alt="my image" />
             <div className='homeinfo'>
                <div className='rings'>
-                  <div className='ring'></div>
-                  <div className='ring'></div>
-                  <div className='ring'></div>
+                 <a href="https://github.com/KatoIsa">
+                 </a>
+                 <a href="https://www.linkedin.com/in/kato-isa-932972206">
+                 </a>
+                 <a href="https://www.instagram.com/katoisa256/">
+                 </a>
                </div>
                <p>Am Kato Isa <br /> <span>full stack dev</span></p>
             </div>
