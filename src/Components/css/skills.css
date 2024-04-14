@@ -39,3 +39,22 @@
     color: #fff;
     margin-bottom: 10px;
 }
+
+/* 
+    mobile responsiveness ....
+*/
+@media (max-width: 552px) {
+    .table {
+        position: absolute;
+        left: 0px;
+        font-size: 13px;
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .table .sec {
+        border-radius:  10px!important;
+    }
+}
