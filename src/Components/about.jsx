@@ -1,6 +1,10 @@
 import './css/about.css'
 export default function About() {
     const slash = "'"
+
+    const cvalert = () => {
+        alert('currently not available ...')
+    }
     return <div className="AboutContainer space">
         <h1>ABOUT ME</h1>
         
@@ -11,7 +15,7 @@ export default function About() {
         </p>
 
         <div className='buttonWrapper'>
-        <button className="Button" ><p>DOWNLOAD CV</p></button>
+        <button className="Button" onClick={cvalert} ><p>DOWNLOAD CV</p></button>
         </div>
 
         
