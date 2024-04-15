@@ -6,7 +6,7 @@ import About from '../about'
 import Blog from '../blog'
 import '../css/card.css'
 import logo from '../css/Icon-Small.png'
-import Cv from '../cv'
+import Contact from '../contact'
 import Home from '../home'
 import Skills from '../skills'
 import Work from '../work'
@@ -19,15 +19,15 @@ export default function Cards() {
 
             {
                 cardname: 'HOME',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'I am Kato Isa a full stack dev',
                 grow: false,
                 Expanded: () => {
-                    return <Home />
+                    return <Home handleProjectsButton={projectsButton} handleContactMeButton={contactMeButton}/>
                 }
             },
             {
                 cardname: 'ABOUT',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: "Hello World! I'm Kato Isa a ...",
                 grow: false,
                 Expanded: () => {
                     return <About />
@@ -35,23 +35,23 @@ export default function Cards() {
             },
             {
                 cardname: 'BLOG',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'Dive into a tech haven where ...',
                 grow: false,
                 Expanded: () => {
                     return <Blog />
                 }
             },
             {
-                cardname: 'CV',
-                shrinkdata: 'this is info to fill in the missing',
+                cardname: 'CONTACT',
+                shrinkdata: 'Drop me a massage if your ...',
                 grow: false,
                 Expanded: () => {
-                    return <Cv />
+                    return <Contact />
                 }
             },
             {
                 cardname: 'SKILL',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: "I've worked on a wide range of ... ",
                 grow: false,
                 Expanded: () => {
                     return <Skills />
@@ -59,7 +59,7 @@ export default function Cards() {
             },
             {
                 cardname: 'WORK',
-                shrinkdata: 'this is info to fill in the missing',
+                shrinkdata: 'The projects I have been working ...',
                 grow: false,
                 Expanded: () => {
                     return <Work />
@@ -68,22 +68,29 @@ export default function Cards() {
         ]
     )
 
+    const projectsButton = () => {setCounter(5);}
+    const contactMeButton = () => {setCounter(3);}
+   
     const handleFrontButtonClick = () => {
         setCounter((prevCounter) => (prevCounter + 1) % carddata.length);
         handleAnimation('.active', 'animate 0.5s');
         handleAnimation('.slideleft', 'slide 0.5s');
+
+        console.log(counter);
     };
 
     const hundleBackButtonClick = () => {
         setCounter((prevCounter) => (prevCounter - 1 + carddata.length) % carddata.length);
-        handleAnimation('.active', 'animate 0.5s');
+        handleAnimation('.active', 'animate  0.5s');
         handleAnimation('.slideleft', 'slide 0.5s');
+
+        console.log(counter);
     }
 
-    const handleAnimation = (ele, animationname) =>{
+    const handleAnimation = (ele, animationname) => {
         const element = document.querySelector(ele);
 
-        if(!isanimate) {
+        if (!isanimate) {
             setIsanimate(true);
             element.style.animation = animationname;
         }
@@ -91,6 +98,7 @@ export default function Cards() {
         element.addEventListener('animationend', () => {
             setIsanimate(false);
             element.style.animation = '';
+
         });
     };
 
@@ -109,7 +117,7 @@ export default function Cards() {
                 <div
                     key={index}
                     id={`corousel-item-${index}`}
-                    className={`card 'corousel-item' ${index === 1 ? 'slideleft' : '' } ${index === 0 ? 'active' : ''} `}
+                    className={`card 'corousel-item' ${index === 1 ? 'slideleft' : ''} ${index === 0 ? 'active' : ''} `}
                 >
                     {element.grow === false ?
                         <div className='fill'>
@@ -124,6 +132,7 @@ export default function Cards() {
                             </div>
 
                         </div> : <>
+                            <div className='alignmentHelper'></div>
                             {element.Expanded()}
                             <div className='NavigationButtons'>
                                 <button onClick={hundleBackButtonClick} className='backButton'>
