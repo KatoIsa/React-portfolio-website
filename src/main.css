@@ -1,27 +1,37 @@
 @import url("./Components/css/alpha.css");
 
 @font-face {
-    font-family: 'code-normal';
-    src:  url("./fonts/SourceCodePro-Regular.otf");
+  font-family: "code-normal";
+  src: url("./fonts/SourceCodePro-Regular.otf");
 }
 @font-face {
-    font-family: 'code-bold';
-    src:  url("./fonts/SourceCodePro-Bold.otf");
+  font-family: "code-bold";
+  src: url("./fonts/SourceCodePro-Bold.otf");
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: "code-normal";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "code-normal";
 }
 
-body{
-    overflow-x: hidden;
-    background: var(--dark-black);
-    color: var(--dark-black-lighter);
+body {
+  overflow-x: hidden;
+  background: var(--dark-black);
+  color: var(--dark-black-lighter);
+  width: 100%;
 }
-button{
-    border: none;
-    outline: none;
+button {
+  border: none;
+  outline: none;
 }
 
+canvas {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
