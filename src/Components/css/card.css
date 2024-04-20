@@ -58,6 +58,7 @@
  Individual card styles ....
 */
 .container .card:nth-child(1) {
+    background-color: #030307cc!important;
     width: 600px;
     min-height: 600px;
     align-items: center;
